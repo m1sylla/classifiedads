@@ -1,0 +1,9 @@
+.hover-color-blue:hover {
+    color: #075b9a;
+    text-decoration: none;
+}
+
+.hover-color-orange:hover {
+    color: #fe6700;
+    text-decoration: none;
+}
