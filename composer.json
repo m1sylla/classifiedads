@@ -7,6 +7,10 @@
         "laravel"
     ],
     "license": "MIT",
+    "warmup": [
+        "php artisan config:cache",
+        "php artisan route:cache"
+    ],
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
