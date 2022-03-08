@@ -98,7 +98,7 @@ class RegisterController extends Controller
 
         // send confirmation link
 
-        event(new NewUserRegisteredEvent($compte, $data));
+        //event(new NewUserRegisteredEvent($compte, $data));
 
         return $compte; 
     }

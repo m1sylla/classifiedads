@@ -21,5 +21,14 @@ class DatabaseSeeder extends Seeder
             'confirmed' => 1,
             'password' => Hash::make('d8caaemho2j8ls'),
         ]);
+        // user demo
+        DB::table('comptes')->insert([
+            'first_name' => 'user',
+            'last_name' => 'user',
+            'email' => 'userdemo@gmail.com',
+            'confirmed' => 1,
+            'phone_verified' => 1,
+            'password' => Hash::make('userdemo'),
+        ]);
     }
 }
