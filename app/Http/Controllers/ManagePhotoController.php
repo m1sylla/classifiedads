@@ -10,6 +10,7 @@ use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str as Str;
 use Image;
 
@@ -138,13 +139,16 @@ class ManagePhotoController extends Controller
                     $processus->ended = 1;
                     $processus->save();
                     Session::flash('ad_added_success', "Votre annonce a été ajoutée.");
+                    //$id = $annonce->id;
                     $url = '/nouvelle/annonce/' . $annonce->id . '/success';
-                    return $url;
+                    //return redirect()->route('profile', [$user]);
+                    return redirect($url);
                 //break;
 
                 case 'attribute':
                     $url = '/annonce/attribute/' . $processus->token;
-                    return $url;
+                    //return redirect()->route('profile', [$user]);
+                    return redirect($url);
             }
         } else {
             return abort(404);

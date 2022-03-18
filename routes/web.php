@@ -135,7 +135,7 @@ Route::get('/annonce/photo/{token}', ['as' => 'ad.photo.form', 'uses' => 'Manage
 Route::post('/annonce/photo/create', 'ManagePhotoController@adPhotoCreate');
 //['as' => 'ad.photo.create', 'uses' => /annonce/photo/create
 
-// ad attributes
+// ad attributes 
 Route::get('/annonce/attribute/{token}', ['as' => 'ad.attribute.form', 'uses' => 'ManageAdController@attributeAdForm']);
 Route::post('/annonce/attribute/create', ['as' => 'ad.attribute.create', 'uses' => 'ManageAdController@attributeAdCreate']);
 

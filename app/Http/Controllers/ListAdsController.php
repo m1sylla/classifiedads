@@ -156,7 +156,8 @@ class ListAdsController extends Controller
                 'comptes.email', 'comptes.avatar', 'comptes.created_at', 'professionnels.brand',
                 'professionnels.location as adress', 'professionnels.logo',
                 DB::raw("COUNT(annonces.compte_id) as total_ads"))
-            ->where('comptes.id', '=', $annonce->compte_id)->first();
+            ->where('comptes.id', '=', $annonce->compte_id)
+            ->groupBy('comptes.id')->first();
 
             // get photos
             $photo = Photo::where('annonce_id', $annonce->id)->first();

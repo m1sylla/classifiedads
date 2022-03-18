@@ -83,12 +83,18 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Immobilier')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Immobilier'))
+                                        @foreach($ads_by_cats as $ads_by_cat)
+                                            @if ($ads_by_cat->category == 'Immobilier')
+                                                {{$ads_by_cat->total}}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        {{0}}
+                                    @endif annonces
                                 </span>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div class="col-6 col-sm-4">
                         <div class="row align-items-center p-2">
@@ -105,9 +111,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Multimédia')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Multimédia'))
+                                        @foreach($ads_by_cats as $ads_by_cat)
+                                            @if ($ads_by_cat->category == 'Multimédia')
+                                                {{$ads_by_cat->total}}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        {{0}}
+                                    @endif annonces
                                 </span>
                             </div>
                         </div>
@@ -127,9 +139,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Véhicule')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Véhicule'))
+                                        @foreach($ads_by_cats as $ads_by_cat)
+                                            @if ($ads_by_cat->category == 'Véhicule')
+                                                {{$ads_by_cat->total}}
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        {{0}}
+                                    @endif annonces
                                 </span>
                             </div>
                         </div>
@@ -149,9 +167,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Mode & Beauté')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Mode & Beauté'))
+                                    @foreach($ads_by_cats as $ads_by_cat)
+                                        @if ($ads_by_cat->category == 'Mode & Beauté')
+                                            {{$ads_by_cat->total}}
+                                        @endif
+                                    @endforeach
+                                @else
+                                    {{0}}
+                                @endif annonces
                                 </span>
                             </div>
                         </div>
@@ -171,9 +195,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Emploi')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Emploi'))
+                                    @foreach($ads_by_cats as $ads_by_cat)
+                                        @if ($ads_by_cat->category == 'Emploi')
+                                            {{$ads_by_cat->total}}
+                                        @endif
+                                    @endforeach
+                                @else
+                                    {{0}}
+                                @endif annonces
                                 </span>
                             </div>
                             
@@ -194,9 +224,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Meuble & Jardin')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Meuble & Jardin'))
+                                    @foreach($ads_by_cats as $ads_by_cat)
+                                        @if ($ads_by_cat->category == 'Meuble & Jardin')
+                                            {{$ads_by_cat->total}}
+                                        @endif
+                                    @endforeach
+                                @else
+                                    {{0}}
+                                @endif annonces
                                 </span>
                             </div>
                             
@@ -217,9 +253,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Commerce & Industrie')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Commerce & Industrie'))
+                                    @foreach($ads_by_cats as $ads_by_cat)
+                                        @if ($ads_by_cat->category == 'Commerce & Industrie')
+                                            {{$ads_by_cat->total}}
+                                        @endif
+                                    @endforeach
+                                @else
+                                    {{0}}
+                                @endif annonces
                                 </span>
                             </div>
                             
@@ -240,9 +282,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Culture & Loisir')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Culture & Loisir'))
+                                    @foreach($ads_by_cats as $ads_by_cat)
+                                        @if ($ads_by_cat->category == 'Culture & Loisir')
+                                            {{$ads_by_cat->total}}
+                                        @endif
+                                    @endforeach
+                                @else
+                                    {{0}}
+                                @endif annonces
                                 </span>
                             </div>
                         </div>
@@ -262,9 +310,15 @@
                                     </a>
                                 </p>
                                 <span class="text-muted">
-                                    @if ($ads_by_cats->count()>0)
-                                        {{$ads_by_cats->where('category', 'Service')->count()}}
-                                    @else 0 @endif annonces
+                                    @if ($ads_by_cats->contains('category','Service'))
+                                    @foreach($ads_by_cats as $ads_by_cat)
+                                        @if ($ads_by_cat->category == 'Service')
+                                            {{$ads_by_cat->total}}
+                                        @endif
+                                    @endforeach
+                                @else
+                                    {{0}}
+                                @endif annonces
                                 </span>
                             </div>
                         </div> 

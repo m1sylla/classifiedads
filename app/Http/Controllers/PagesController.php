@@ -22,17 +22,20 @@ class PagesController extends Controller
         $recommanded_ads = collect([]);
 
         $ads_by_cats = DB::table('annonces')
-            ->join('categories', function ($join){
-                $join->on('annonces.category_id', '=', 'categories.id');
-                })
-            ->select('annonces.id','categories.name as category')
-            ->where('annonces.validated', true)
-            ->get();
+            ->join('categories', 'annonces.category_id', '=', 'categories.id')
+            ->select('annonces.id', 'categories.name as category', DB::raw("count(categories.name) as total"))
+            ->where('annonces.validated', true)->groupBy('categories.id')->get();
+
+        // $ads_by_cats = DB::table('annonces')
+        //     ->join('categories', 'annonces.category_id', '=', 'categories.id')
+        //     ->select('annonces.id','categories.name as category')
+        //     ->where('annonces.validated', true) 
+        //     ->get();
             
-        /*
+        /****
         $recommands = SponsoredAd::whereDate('end_at', '>=', Carbon::now())
         ->select('annonce_id')
-        ->get(); */
+        ->get(); ****/
 
         //if ($recommands->isNotEmpty()) {
             $recommanded_ads = DB::table('annonces')
@@ -61,7 +64,7 @@ class PagesController extends Controller
             ->get();
         //}
         
-        //dd($recommanded_ads);
+        //dd($ads_by_cats);
         return view('index', compact('ads_by_cats', 'recommanded_ads'));
     }
 
